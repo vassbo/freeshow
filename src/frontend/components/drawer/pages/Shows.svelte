@@ -8,7 +8,7 @@
     import { clone } from "../../helpers/array"
     import { history } from "../../helpers/history"
     import { dateToString } from "../../helpers/time"
-    import Button from "../../inputs/Button.svelte"
+    import FavButton from "../../inputs/FavButton.svelte"
     import ShowButton from "../../inputs/ShowButton.svelte"
     import Autoscroll from "../../system/Autoscroll.svelte"
     import Center from "../../system/Center.svelte"
@@ -135,8 +135,9 @@
         {/if}
     </div>
 </Autoscroll>
+
 <div class="tabs">
-    <Button
+    <FavButton
         id="newShowBtn"
         style="flex: 1;"
         on:click={(e) => {
@@ -148,9 +149,9 @@
         center
         title="{$dictionary.tooltip?.show} [Ctrl+N]"
     >
-        <Icon id="add" right={!$labelsDisabled} />
+        <Icon id="add" size={1.1} right={!$labelsDisabled} />
         {#if !$labelsDisabled}<T id="new.show" />{/if}
-    </Button>
+    </FavButton>
 </div>
 
 <style>
@@ -168,6 +169,8 @@
     } */
 
     .tabs {
+        position: relative;
+
         display: flex;
         background-color: var(--primary-darkest);
     }

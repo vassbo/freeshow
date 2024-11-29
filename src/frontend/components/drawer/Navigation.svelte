@@ -8,6 +8,7 @@
     import Icon from "../helpers/Icon.svelte"
     import T from "../helpers/T.svelte"
     import Button from "../inputs/Button.svelte"
+    import FavButton from "../inputs/FavButton.svelte"
     import FolderPicker from "../inputs/FolderPicker.svelte"
     import DropArea from "../system/DropArea.svelte"
     import NavigationButtons from "./NavigationButtons.svelte"
@@ -179,10 +180,12 @@
     </div>
     {#if id === "shows"}
         <div class="tabs">
-            <Button on:click={() => history({ id: "UPDATE", location: { page: "drawer", id: "category_shows" } })} center title={$dictionary.new?.category}>
+            <FavButton on:click={() => history({ id: "UPDATE", location: { page: "drawer", id: "category_shows" } })} center title={$dictionary.new?.category}>
+                <!-- round -->
+                <!-- <Icon id="add" size={1.3} /> -->
                 <Icon id="add" right={!$labelsDisabled} />
                 {#if !$labelsDisabled}<T id="new.category" />{/if}
-            </Button>
+            </FavButton>
         </div>
     {:else if id === "media" || id === "audio"}
         <FolderPicker id={id.toUpperCase()} title={$dictionary.new?.folder}>

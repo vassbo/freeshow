@@ -123,10 +123,17 @@
         overflow: auto;
         position: absolute;
         transform: translate(100%, -10px);
-        background-color: var(--primary);
-        border-radius: var(--border-radius);
         box-shadow: 2px 2px 3px rgb(0 0 0 / 0.2);
         padding: 5px 0;
         z-index: 5000;
+
+        border-radius: var(--border-radius);
+        background-color: var(--primary);
+
+        /* get rgb from theme primary color */
+        background: rgba(41, 44, 54, 0.98);
+        background: linear-gradient(150deg, rgba(41, 44, 54, 0.98) 0%, rgba(41, 49, 59, 0.95) 100%);
+        backdrop-filter: blur(3px);
+        border-radius: 4px;
     }
 </style>

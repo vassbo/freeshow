@@ -10,6 +10,7 @@
     import { checkInput } from "../helpers/showActions"
     import T from "../helpers/T.svelte"
     import Button from "../inputs/Button.svelte"
+    import FavButton from "../inputs/FavButton.svelte"
     import ProjectButton from "../inputs/ProjectButton.svelte"
     import ShowButton from "../inputs/ShowButton.svelte"
     import { autoscroll } from "../system/autoscroll"
@@ -197,14 +198,17 @@
         {/if}
 
         <div id="projectsButtons" class="tabs">
-            <Button on:click={() => history({ id: "UPDATE", newData: { replace: { parent: $projects[$activeProject || ""]?.parent || "/" } }, location: { page: "show", id: "project_folder" } })} center title={$dictionary.new?.folder}>
-                <Icon id="folder" right={!$labelsDisabled} />
-                {#if !$labelsDisabled}<p><T id="new.folder" /></p>{/if}
-            </Button>
-            <Button on:click={() => history({ id: "UPDATE", newData: { replace: { parent: $projects[$activeProject || ""]?.parent || "/" } }, location: { page: "show", id: "project" } })} center title={$dictionary.new?.project}>
-                <Icon id="project" right={!$labelsDisabled} />
+            <FavButton extra on:click={() => history({ id: "UPDATE", newData: { replace: { parent: $projects[$activeProject || ""]?.parent || "/" } }, location: { page: "show", id: "project" } })} center title={$dictionary.new?.project}>
+                <Icon id="project" size={1.1} right={!$labelsDisabled} />
                 {#if !$labelsDisabled}<p><T id="new.project" /></p>{/if}
-            </Button>
+
+                <div class="extraCnt" slot="extraCnt">
+                    <Button on:click={() => history({ id: "UPDATE", newData: { replace: { parent: $projects[$activeProject || ""]?.parent || "/" } }, location: { page: "show", id: "project_folder" } })} center title={$dictionary.new?.folder}>
+                        <Icon id="folder" size={1.1} right={!$labelsDisabled} />
+                        {#if !$labelsDisabled}<p><T id="new.folder" /></p>{/if}
+                    </Button>
+                </div>
+            </FavButton>
         </div>
     {:else}
         <div id="projectArea" class="list context #project">
@@ -257,10 +261,10 @@
 
 {#if $activeProject && !$projectView && !$focusMode && !recentlyUsedList.length}
     <div class="tabs">
-        <Button style="width: 100%;" title={$dictionary.new?.section} on:click={addSection} center>
+        <FavButton title={$dictionary.new?.section} on:click={addSection} center>
             <Icon id="section" right={!$labelsDisabled} />
             {#if !$labelsDisabled}<p><T id="new.section" /></p>{/if}
-        </Button>
+        </FavButton>
     </div>
 {/if}
 
@@ -281,9 +285,9 @@
         /* width: 100%;
     justify-content: space-between; */
     }
-    .tabs :global(button) {
+    /* .tabs :global(button) {
         width: 50%;
-    }
+    } */
 
     .tabs .header {
         width: 100%;

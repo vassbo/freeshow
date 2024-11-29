@@ -61,6 +61,10 @@
     .popup {
         position: absolute;
         background-color: rgb(0 0 0 / 0.8);
+        /* very laggy */
+        /* backdrop-filter: blur(4px); */
+        /* background-image: url("../assets/grainy-texture.png");
+        background-blend-mode: multiply; */
         /* pointer-events: none; */
         width: 100%;
         height: 100%;
