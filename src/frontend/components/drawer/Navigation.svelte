@@ -237,6 +237,7 @@
         width: 100%;
         padding: 0.1em 0.8em !important;
         justify-content: space-between;
+        background-color: var(--primary);
     }
     .tabs :global(button) {
         width: 100%;

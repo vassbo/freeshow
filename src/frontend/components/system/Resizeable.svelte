@@ -119,16 +119,23 @@
     :global(.bar_left) {
         padding-right: var(--handle-width);
         /* border-radius: 0 var(--border-radius) var(--border-radius) 0; */
+        box-shadow: 2px 0 14px rgb(0 0 0 / 0.12);
     }
     :global(.bar_right) {
         padding-left: var(--handle-width);
         /* border-radius: var(--border-radius) 0 0 var(--border-radius); */
+
+        box-shadow: -2px 0 14px rgb(0 0 0 / 0.12);
     }
     :global(.bar_top) {
         padding-bottom: var(--handle-width);
+
+        box-shadow: 0 2px 14px rgb(0 0 0 / 0.12);
     }
     :global(.bar_bottom) {
         padding-top: var(--handle-width);
+
+        box-shadow: 0 -2px 14px rgb(0 0 0 / 0.12);
     }
 
     div::after {

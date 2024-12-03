@@ -94,8 +94,12 @@
         display: flex;
         justify-content: space-between;
         z-index: 30;
-        min-height: 40px;
-        height: 40px;
+
+        min-height: 45px;
+        height: 45px;
+        padding-top: 5px;
+
+        background-color: var(--primary);
 
         /* disabled because it's causing unexpected behaviour in Windows 11 */
         /* -webkit-app-region: drag; */
@@ -106,6 +110,11 @@
 
     .top.drag {
         -webkit-app-region: drag;
+    }
+
+    .top :global(button) {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
     }
 
     .top.drag :global(button) {

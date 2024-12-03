@@ -474,8 +474,17 @@
         position: relative;
         display: flex;
 
+        border-radius: 4px;
+
         /* height: fit-content; */
         /* border: 2px solid var(--primary-lighter); */
+    }
+    .slide :global(.selectElem#slide) {
+        border-radius: 4px;
+    }
+    .slide :global(.zoomed .slide) {
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
     }
 
     .slide :global(.isSelected) {
@@ -554,6 +563,9 @@
         font-weight: bold;
         align-items: center;
         /* opacity: 0.8; */
+
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
     }
 
     .label .text {

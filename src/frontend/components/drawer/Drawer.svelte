@@ -197,6 +197,8 @@
         z-index: 20;
 
         background-color: var(--primary);
+
+        box-shadow: 0 -2px 14px rgb(0 0 0 / 0.12);
     }
 
     .top {

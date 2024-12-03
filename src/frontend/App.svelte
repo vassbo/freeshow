@@ -76,6 +76,7 @@
     }
     main:not(.background) {
         background-color: var(--primary);
+        background: linear-gradient(130deg, var(--primary) 0%, rgb(42, 44, 62) 100%);
     }
 
     .closeAd {

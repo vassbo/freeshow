@@ -253,6 +253,8 @@
         width: 180px;
         height: 180px;
 
+        border-radius: 10px;
+
         display: flex;
         gap: 10px;
         flex-direction: column;

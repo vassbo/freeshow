@@ -40,7 +40,7 @@
                     {/if}
 
                     {#if popupId !== "alert" && !disablePopupClose.includes(popupId)}
-                        <Button style="position: absolute;right: 0;top: 0;height: 100%;min-height: 40px;" title={$dictionary.actions?.close} on:click={() => activePopup.set(null)}>
+                        <Button style="position: absolute;right: 0;top: 0;height: 100%;min-height: 40px;border-radius: 8px;" title={$dictionary.actions?.close} on:click={() => activePopup.set(null)}>
                             <Icon id="close" size={2} />
                         </Button>
                     {/if}
@@ -92,7 +92,8 @@
     .card {
         position: relative;
         background-color: var(--primary);
-        border-radius: var(--border-radius);
+        /* border-radius: var(--border-radius); */
+        border-radius: 10px;
         overflow-y: auto;
         /* overflow-x: hidden; */
 
